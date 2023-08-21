@@ -1,0 +1,949 @@
+[
+    {
+        "id": "a3c72c4b2ab531ce",
+        "type": "ui_button",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "9ecc6633810e039c",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "label": "Trigger Alarm",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"text\":\"Alarm Has been Triggered\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "75db0e4678156f57",
+                "24438ccc6e90144f",
+                "72f2f51cd3fd1010"
+            ]
+        ]
+    },
+    {
+        "id": "c1ff24999a6232df",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Alarm Off",
+        "payloadType": "str",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "10d4ef28cf3c4a5d"
+            ]
+        ]
+    },
+    {
+        "id": "9cdef7908153f045",
+        "type": "ui_toast",
+        "z": "e31df6c9cee964f2",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 790,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "10d4ef28cf3c4a5d",
+        "type": "ui_button",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "9ecc6633810e039c",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "label": "Alarm Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"text\":\"Alarm OFF\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "24438ccc6e90144f",
+                "72f2f51cd3fd1010",
+                "75db0e4678156f57"
+            ]
+        ]
+    },
+    {
+        "id": "f945c66b74939f30",
+        "type": "ui_slider",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "label": "Intensity",
+        "tooltip": "",
+        "group": "9ecc6633810e039c",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "Turbulation",
+        "topicType": "msg",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "a2be1f5406cf2334",
+                "3702b4d3ff743c7b",
+                "f138cb8041e3c2b2",
+                "7edaab45fb34392d",
+                "082523a951a13bf0",
+                "7d6cf31d1c8bbaa3",
+                "c714e38a91a2008f",
+                "8581e413e815c794",
+                "35fc71a0c2d7b77d",
+                "0f34b61d2fde59dc",
+                "79ba984d3d1131f3"
+            ]
+        ]
+    },
+    {
+        "id": "8493be086dbf0f7e",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Sensor3",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "f945c66b74939f30"
+            ]
+        ]
+    },
+    {
+        "id": "a57da539964b74ba",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "Sensor5",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "f945c66b74939f30",
+                "a3c72c4b2ab531ce"
+            ]
+        ]
+    },
+    {
+        "id": "28bccc9f99a04d6e",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Sensor1",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "f945c66b74939f30"
+            ]
+        ]
+    },
+    {
+        "id": "60997bef8e3ad57f",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "Sensor4",
+        "payload": "7",
+        "payloadType": "num",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "f945c66b74939f30"
+            ]
+        ]
+    },
+    {
+        "id": "1223d9a4fd6b09c8",
+        "type": "inject",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Sensor2",
+        "payload": "4",
+        "payloadType": "num",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "f945c66b74939f30"
+            ]
+        ]
+    },
+    {
+        "id": "d2aaf51e39992f30",
+        "type": "debug",
+        "z": "e31df6c9cee964f2",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "75db0e4678156f57",
+        "type": "function",
+        "z": "e31df6c9cee964f2",
+        "name": "function 2",
+        "func": "msg.payload = msg.payload.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "9cdef7908153f045"
+            ]
+        ]
+    },
+    {
+        "id": "24438ccc6e90144f",
+        "type": "ui_text",
+        "z": "e31df6c9cee964f2",
+        "group": "9ecc6633810e039c",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Alarm",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a2be1f5406cf2334",
+        "type": "function",
+        "z": "e31df6c9cee964f2",
+        "name": "function 3",
+        "func": "if(msg.payload > 7 && msg.payload < 9 )\n{\n    msg.payload = \"Dangerous\" \n}\nelse if (msg.payload >= 9)\n{\n    msg.payload = 10;\n    return msg;\n}\n{\n    msg.payload = \"Balanced\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "d2aaf51e39992f30",
+                "24438ccc6e90144f",
+                "bfdc657123fd66d6"
+            ]
+        ]
+    },
+    {
+        "id": "bfdc657123fd66d6",
+        "type": "ui_text",
+        "z": "e31df6c9cee964f2",
+        "group": "9ecc6633810e039c",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fa4157b65b301f99",
+        "type": "ui_switch",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "label": "Safety Switch",
+        "tooltip": "",
+        "group": "9ecc6633810e039c",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "21f14c7ff32a306f"
+            ]
+        ]
+    },
+    {
+        "id": "21f14c7ff32a306f",
+        "type": "function",
+        "z": "e31df6c9cee964f2",
+        "name": "function 5",
+        "func": "if (msg.payload == true)\n{\n    msg.payload = 1;\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "f945c66b74939f30"
+            ]
+        ]
+    },
+    {
+        "id": "f138cb8041e3c2b2",
+        "type": "ui_text",
+        "z": "e31df6c9cee964f2",
+        "group": "9ecc6633810e039c",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Monitoring",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 590,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3702b4d3ff743c7b",
+        "type": "debug",
+        "z": "e31df6c9cee964f2",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "72f2f51cd3fd1010",
+        "type": "debug",
+        "z": "e31df6c9cee964f2",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7edaab45fb34392d",
+        "type": "ui_chart",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "cc62fcfe661f0655",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "Line Chart ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "082523a951a13bf0",
+        "type": "ui_chart",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "cd2a5ba1c1d10b88",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d6cf31d1c8bbaa3",
+        "type": "ui_chart",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "5ac18f0029cf9ee7",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "horizontalBar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c714e38a91a2008f",
+        "type": "ui_gauge",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "7c29a79714c72fad",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 570,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8581e413e815c794",
+        "type": "function",
+        "z": "e31df6c9cee964f2",
+        "name": "function 4",
+        "func": "if(msg.payload > \"6\" && msg.payload<\"9\")\n{\n    msg.payload = \"Dangerous\";\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 500,
+        "wires": [
+            [
+                "9cdef7908153f045"
+            ]
+        ]
+    },
+    {
+        "id": "35fc71a0c2d7b77d",
+        "type": "switch",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "9",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "a3c72c4b2ab531ce"
+            ],
+            [
+                "10d4ef28cf3c4a5d"
+            ]
+        ]
+    },
+    {
+        "id": "0f34b61d2fde59dc",
+        "type": "ui_chart",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "2e4cc47d486a41c9",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "label": "",
+        "chartType": "radar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79ba984d3d1131f3",
+        "type": "ui_chart",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "50aeda3a8ce13ae0",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "label": "",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd8b4eb33e3f1b06",
+        "type": "ui_button",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "9ecc6633810e039c",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "label": "Shut Down",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"text\":\"Alarm Has been Triggered\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 390,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "761ce38b4de1969a",
+        "type": "ui_button",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "9ecc6633810e039c",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "label": "Visualization",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"text\":\"Alarm OFF\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 390,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e364237010ea4930",
+        "type": "ui_button",
+        "z": "e31df6c9cee964f2",
+        "name": "",
+        "group": "9ecc6633810e039c",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "label": "Switch",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"text\":\"Alarm OFF\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ecc6633810e039c",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cc62fcfe661f0655",
+        "type": "ui_group",
+        "name": "Analysis",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cd2a5ba1c1d10b88",
+        "type": "ui_group",
+        "name": "Monitoring ",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5ac18f0029cf9ee7",
+        "type": "ui_group",
+        "name": "Visualization",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7c29a79714c72fad",
+        "type": "ui_group",
+        "name": "Control System",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2e4cc47d486a41c9",
+        "type": "ui_group",
+        "name": "Radar Monitoring",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "50aeda3a8ce13ae0",
+        "type": "ui_group",
+        "name": "Bar Monitoring",
+        "tab": "33ec5d00f1fe4a28",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "33ec5d00f1fe4a28",
+        "type": "ui_tab",
+        "name": "Real Time Monitoring",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
